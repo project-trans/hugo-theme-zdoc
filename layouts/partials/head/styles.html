@@ -12,3 +12,11 @@
   {{ end }}
 {{ end }}
 {{ end }}
+
+<!-- Fonts -->
+{{- with .Site.Params.fontsLink -}}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="stylesheet" href="{{ . }}" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="{{ . }}" /></noscript>
+{{- end }}
