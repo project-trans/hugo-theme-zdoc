@@ -1,7 +1,7 @@
 <div id="siteLogo" class="navbar__logo--wrapper">
   {{ if $.Param "logo" | default true }}
     <a href="{{ "/" | relLangURL }}" title="{{ i18n "tooltip-home" }}" rel="home" class="{{ if eq ($.Param "logoType") "long" }}navbar__long--link{{ else }}navbar__logo--link{{ end }}">
-      <img src="{{ "/logo.png" | relURL }}" alt="Home" class="navbar__logo">
+      <img src="{{ $.Param "logoImage" | relURL }}" alt="Home" class="navbar__logo">
     </a>
   {{ else }}
     &nbsp;&nbsp;
