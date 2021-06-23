@@ -26,6 +26,9 @@
             </div>
           {{ end }}
         {{ else }}
+          {{ if $.Param "enableContactUs" }}
+            <p class="caption">Contact Us: <a href="mailto:{{ $.Param "email" }}" rel="noreferrer">{{ $.Param "email" }}</a></p>
+          {{ end }}
           <p class="caption">
             {{ with $.Site.Copyright }}{{ replace . "{year}" now.Year | markdownify }}{{ end }}
           </p>
