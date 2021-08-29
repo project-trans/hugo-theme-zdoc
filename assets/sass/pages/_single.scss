@@ -71,7 +71,7 @@
     h4,
     h5,
     h6 {
-      position: relative;      
+      position: relative;
       line-height: 1.25;
       padding: 0 1rem;
       font-family: $title-font;
@@ -81,7 +81,7 @@
     h2 {
       color: inherit;
       font-weight: 900;
-      text-rendering: optimizeLegibility; 
+      text-rendering: optimizeLegibility;
 
       @include themify($themes) {
         color: themed("single-contents-title-color");
@@ -163,7 +163,7 @@
         }
       }
     }
-    
+
     p > code:not([class^=language]) {
       padding: 0.25rem 0.5rem;
       @include themify($codeblock) {
@@ -181,7 +181,7 @@
       color: inherit;
       opacity: 0.8;
       position: relative;
-      
+
       @include themify($themes) {
         border-left: 5px solid themed("single-blockquote-border-color");
       }
@@ -208,7 +208,7 @@
     }
 
     p {
-      padding: 0 1rem;      
+      padding: 0 1rem;
 
       code:not([class^=language]) {
         padding: 3px 7px;
@@ -223,12 +223,14 @@
       margin-right: 0;
       margin-top: 0;
       margin-bottom: 1rem;
+      margin-right: 1rem;
       padding: 0;
       list-style: disc outside none;
     }
 
     ol {
       margin-bottom: 1rem;
+      margin-right: 1rem;
     }
 
     &[data-dir="ltr"] {
@@ -262,7 +264,7 @@
           color: themed('content-code-in-pre-color');
         }
       }
-      
+
       p > code:not([class^=language]) {
         @include themify($codeblock) {
           color: themed('content-code-color');
@@ -307,15 +309,15 @@
     }
 
     .table-wrapper {
-      overflow-x: auto;    
-      margin: 1rem;  
+      overflow-x: auto;
+      margin: 1rem;
 
       > table {
         max-width: 100%;
         margin: 10px 0;
         border-spacing: 0;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.125);
-        
+
         @include themify($codeblock) {
           thead {
             background: themed('content-pre-header-background-color');
@@ -394,7 +396,7 @@ pre.chroma {
   }
 }
 
-code:not([class^=language]) {  
+code:not([class^=language]) {
   padding: 3px 0;
   border-radius: 4px;
   @include themify($codeblock) {
@@ -425,7 +427,7 @@ pre:not(.chroma) {
     left: 0;
     padding: 2px 7px;
     width: 100%;
-    z-index: z('toc'); 
+    z-index: z('toc');
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
     content: '';
@@ -495,7 +497,7 @@ pre:not(.chroma) {
       }
     }
   }
-  
+
   table, tr, td {
     margin: 0;
     padding: 0;
@@ -514,7 +516,7 @@ pre:not(.chroma) {
     }
   }
 
-  /* LineNumbersTable */  
+  /* LineNumbersTable */
   .lnt {
     margin-left: 0.2rem;
     margin-right: 0.5rem;
