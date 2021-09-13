@@ -10,6 +10,13 @@
         text-decoration: underline;
     }
 
+    ol, ul {
+      margin-bottom: 0 !important;
+      li {
+        margin-left: 0 !important;
+      }
+    }
+
     > table {
         table-layout:fixed;
         width: 100%;
