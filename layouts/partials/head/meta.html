@@ -15,7 +15,7 @@
 {{ hugo.Generator }}
 <meta name="msapplication-TileColor" content="{{ $.Param "themecolor" | default "#ffffff" }}">
 <meta name="theme-color" content="{{ $.Param "themecolor" | default "#ffffff" }}">
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ $.Site.Params.hostName }}{{ .Permalink | relURL }}">
 <link rel="manifest" href="{{ "manifest.json" | relURL }}">
 {{ if $.Site.Params.useFaviconGenerator }}
   <link rel="apple-touch-icon" sizes="57x57" href="{{ "favicon/apple-icon-57x57.png" | relURL }}">
