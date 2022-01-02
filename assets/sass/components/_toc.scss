@@ -6,7 +6,7 @@
   margin: 0 0.5rem;
   margin-top: 0;
   padding-top: 1.25rem;
-  height: calc(100vh - $grid-nav-height);
+  height: calc(100vh - #{$grid-nav-height});
   overflow: auto;
   font-size: 0.85rem;
   z-index: z('toc');
@@ -17,7 +17,7 @@
     @include webkit-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
     @include moz-scrollbars(themed('custom-scrollbar-foreground-color'), themed('custom-scrollbar-background-color'));
   }
-  
+
   #TableOfContents {
     position: relative;
   }
@@ -46,7 +46,7 @@
 
       &.active {
         color: themed('active-font-color');
-        
+
         &::before {
           background-color: themed('active-font-color');
           content: '';
@@ -54,7 +54,7 @@
           left: -8px;
           margin: 0.25rem 0;
           position: absolute;
-          width: 2px;            
+          width: 2px;
           &:last-child {
             background-color: transparent;
           }

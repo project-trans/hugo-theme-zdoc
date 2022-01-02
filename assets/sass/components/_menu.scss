@@ -6,7 +6,7 @@
   margin: 0.5rem;
   margin-top: 0;
   padding-top: 0.85rem;
-  height: calc(100vh - $grid-nav-height);
+  height: calc(100vh - #{$grid-nav-height});
   overflow-y: auto;
   z-index: z('menu');
 
@@ -59,7 +59,7 @@
     @include align-items(center);
     @include themify($themes) {
       color: themed('body-color');
-      
+
       @include on-event {
         color: themed('no-active-font-color');
       }
@@ -92,7 +92,7 @@
       &[data-depth="4"] {
         margin-left: 3.5rem;
       }
-      
+
       @include no-select;
       @include flexbox();
       @include align-items(center);
@@ -160,7 +160,7 @@
     max-height: 0;
     overflow: hidden;
     word-wrap: break-word;
-    
+
     @include transition();
 
     li {

@@ -45,7 +45,7 @@
       top: $grid-nav-height;
       padding: 1rem;
       padding-left: 3rem;
-      height: calc(100vh - $grid-nav-height);
+      height: calc(100vh - #{$grid-nav-height});
       overflow-y: auto;
       z-index: z('menu');
     }

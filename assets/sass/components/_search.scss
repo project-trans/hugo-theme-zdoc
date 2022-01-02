@@ -3,7 +3,7 @@
   width: 240px;
   position: relative;
   border-radius: 0.175rem;
-  z-index: z('search'); 
+  z-index: z('search');
   margin: 0 0.75rem;
 
   &[data-bgimg="true"] {
@@ -194,13 +194,13 @@
       right: 0;
       width: 325px;
       border-radius: .175rem;
-      
+
       @include box-shadow(0, 1px, 3px, 0, rgba(0, 0, 0, 0.4));
       @include themify($themes) {
         background-color: themed('back-background-color');
       }
     }
-  }  
+  }
 
   .dd {
     &-content {
@@ -224,7 +224,7 @@
           background-color: themed('search-hover-background-color');
         }
         border-bottom-left-radius: 0.1rem;
-        border-bottom-right-radius: 0.1rem;        
+        border-bottom-right-radius: 0.1rem;
       }
 
       &.is-active {
@@ -232,7 +232,7 @@
           background-color: themed('search-hover-background-color');
         }
       }
-    }    
+    }
   }
 }
 
@@ -277,7 +277,7 @@
       }
     }
 
-    &--input {      
+    &--input {
       width: calc(100% - 70px);
       height: 70%;
       outline: none;
@@ -298,8 +298,8 @@
 
   &__body {
     width: 100%;
-    height: calc(100vh - $grid-nav-height);
-    overflow: auto;   
+    height: calc(100vh - #{$grid-nav-height});
+    overflow: auto;
 
     @include themify($themes) {
       color: themed('body-color');
@@ -313,14 +313,14 @@
     width: 100%;
     z-index: z('search-btn');
     background-color: transparent;
-    
+
     @include flexbox();
     @include align-items(center);
     @include justify-content(center);
     @include themify($themes) {
-      color: themed('burger-menu-color');  
+      color: themed('burger-menu-color');
       @include on-event {
-        color: themed('active-font-color');   
+        color: themed('active-font-color');
       }
     }
   }
@@ -329,18 +329,18 @@
     @include themify($themes) {
       background-color: themed('search-content-background-color');
     }
-    
+
     a {
       text-decoration: none !important;
     }
   }
 
-  &__item {   
-    padding: 0.5rem;   
+  &__item {
+    padding: 0.5rem;
     list-style-type: none;
 
     &--title {
-      font-size: 1.2rem;      
+      font-size: 1.2rem;
       @include themify($themes) {
         color: themed('body-color');
       }
@@ -353,12 +353,12 @@
     &--desc {
       font-size: 0.9rem;
       padding: 0.25rem 0.5rem;
-      
+
       @include themify($themes) {
         color: themed('search-color');
       }
     }
-    
+
     @include on-event {
       @include themify($themes) {
         background-color: themed('search-hover-background-color');
