@@ -5,7 +5,7 @@
   padding: 0 0.75rem;
   height: 100%;
   position: relative;
-  
+
   @include flexbox();
   @include align-items(center);
 
@@ -57,7 +57,7 @@
         font-size: 16.8px;
         color: inherit;
         text-decoration: none !important;
-        
+
         @include flexbox();
         @include align-items(center);
         @include justify-content(center);
@@ -88,12 +88,12 @@
         width: 100%;
         font-size: 18px;
         padding: 0.5rem 1rem;
-        
+
         @include themify($themes) {
           color: themed('body-color');
-          
+
           @include on-event {
-            text-decoration: none;  
+            text-decoration: none;
             color: themed('link-hover');
           }
 
@@ -128,9 +128,9 @@
   }
 
   &__logo {
-    width: 100%;
-    height: 100%;
     margin: 0 0.25rem;
+    height: 3rem;
+    vertical-align:middle;
 
     &--wrapper {
       height: 100%;
@@ -156,7 +156,7 @@
     &--link {
       width: 32.5px;
       height: 32.5px;
-      
+
       @include flexbox();
       @include align-items(center);
       @include justify-content(center);
@@ -199,7 +199,7 @@
     height: 100%;
     @include flexbox();
     @include align-items(center);
-    
+
     &--icon {
       width: 50px;
       height: $grid-nav-height;
@@ -223,7 +223,7 @@
         & > a {
           height: 100%;
           color: inherit;
-          
+
           @include flexbox();
           @include align-items(center);
           @include justify-content(center);
@@ -242,7 +242,7 @@
     &--content {
       padding: 0.25rem 0;
       min-width: 120px;
-      
+
       @include box-shadow(0, 1px, 3px, 0, rgba(0, 0, 0, 0.4));
       @include themify($themes) {
         background-color: themed('dropdown-background-color');
@@ -285,7 +285,7 @@
     @include transition(all, 0.15s, ease-out);
     @include themify($themes) {
       background-color: themed('navbar-background-color');
-      
+
       &[data-open="true"] {
         border-bottom: 2px solid themed('border-line-color');
       }
