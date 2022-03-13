@@ -9,9 +9,8 @@
       {{ end }}
     </nav>
 
-    <article id="list-main" class="{{ if $wideViewAsDefault }}mr{{ else }}m{{ end }}" data-dir="{{ $.Param "
-      languagedir" | default "ltr" }}">
-      <div id="list-top" class="{{ if $wideViewAsDefault }}{{ else }}hide{{ end }}" data-dir="{{ $.Param " languagedir"
+    <article id="list-main" class="{{ if $wideViewAsDefault }}mr{{ else }}m{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
+      <div id="list-top" class="{{ if $wideViewAsDefault }}{{ else }}hide{{ end }}" data-dir="{{ $.Param "languagedir"
         | default "ltr" }}">
         {{ if $.Param "topToc" }}
         <div class="toc toc__body" style="height: auto;">
@@ -24,8 +23,7 @@
       {{ partial "comments/comments.html" . }}
     </article>
 
-    <section id="list-side" class="{{ if $wideViewAsDefault }}hide{{ else }}r{{ end }}" data-dir="{{ $.Param "
-      languagedir" | default "ltr" }}">
+    <section id="list-side" class="{{ if $wideViewAsDefault }}hide{{ else }}r{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
       {{ if $.Param "enableToc" }}
       {{ partial "main/component/toc.html" . }}
       {{ end }}
