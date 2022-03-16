@@ -10,8 +10,7 @@
     </nav>
 
     <article id="list-main" class="{{ if $wideViewAsDefault }}mr{{ else }}m{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
-      <div id="list-top" class="{{ if $wideViewAsDefault }}{{ else }}hide{{ end }}" data-dir="{{ $.Param "languagedir"
-        | default "ltr" }}">
+      <div id="list-top" class="{{ if $wideViewAsDefault }}{{ else }}hide{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
         {{ if $.Param "topToc" }}
         <div class="toc toc__body" style="height: auto;">
           {{ .TableOfContents }}
