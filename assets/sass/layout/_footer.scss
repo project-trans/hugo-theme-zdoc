@@ -35,6 +35,9 @@
       display: block;
       text-align: left;
       padding: 0.15rem 0.35rem;
+      @at-root html[lang="ug"] & {
+        text-align: right;
+      }
     }
   }
 
