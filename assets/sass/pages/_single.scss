@@ -184,6 +184,10 @@
 
       @include themify($themes) {
         border-left: 5px solid themed("single-blockquote-border-color");
+        @at-root html[lang="ug"] & {
+          border-left: none;
+          border-right: 5px solid themed("single-blockquote-border-color");
+        }
       }
 
       code:not([class^=language]) {
