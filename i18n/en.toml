@@ -21,3 +21,9 @@ other = "WRITTEN BY"
 
 [edit-this-page]
 other = "EDIT THIS PAGE"
+
+[timeliness-title]
+other = "Timeliness tips"
+
+[timeliness-text]
+other = "This is an article created <span>%d</span> days ago and the information in it may have evolved or changed."

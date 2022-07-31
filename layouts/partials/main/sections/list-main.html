@@ -9,6 +9,23 @@
   {{ end }}
 
   <article class="single__contents" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
+    {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
+      {{ $delta := sub now.Unix .Lastmod.Unix }}
+      {{ $days := div $delta 86400 }}
+      {{ if gt $days 30 }}
+        <section class="notices warning timeliness" data-title="{{ i18n "timeliness-title" }}" data-modified="{{ .Lastmod }}">
+          <p>{{ printf (i18n "timeliness-text") $days | safeHTML }}</p>
+        </section>
+      {{ end }}
+    {{ end }}
     {{ .Content }}
   </article>
 </div>
+<script>
+  (function() {
+    const element = document.querySelector(".notices.timeliness")
+    if (!element) return
+    const delta = Date.now() - new Date(element.dataset.modified).getTime()
+    element.querySelector("span").textContent = (delta / 1000 / 86400) | 0
+  }())
+</script>

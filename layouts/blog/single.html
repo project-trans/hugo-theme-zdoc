@@ -2,7 +2,7 @@
 {{ $wideViewAsDefault := ($.Param "wideViewAsDefault") }}
 <div class="mid">
   <div class="divider">
-    
+
     <nav id="single-menu" class="{{ if $wideViewAsDefault }}hide{{ else }}l{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
     </nav>
 
@@ -13,7 +13,7 @@
       {{ partial "main/sections/list-main.html" . }}
       {{ partial "main/component/pagination-single.html" . }}
     </article>
-    
+
     <section id="list-side" class="r" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
       {{ if $.Param "enableToc" }}
         {{ partial "main/component/toc.html" . }}
