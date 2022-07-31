@@ -22,8 +22,8 @@ other = "글쓴이"
 [edit-this-page]
 other = "이 페이지 수정하기"
 
-[timeliness-title]
-other = "Timeliness tips"
+[last-modified]
+other = "Last Modified"
 
 [timeliness-text]
 other = "This is an article created <span>%d</span> days ago and the information in it may have evolved or changed."
