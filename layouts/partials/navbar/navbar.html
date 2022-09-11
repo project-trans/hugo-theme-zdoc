@@ -37,8 +37,8 @@
   
   enquire.register("screen and (max-width:1280px)", {
     match: function () {
-      siteLogo.className = 'navbar__logo--wrapper';
-      tabletLogo.className = 'hide';
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
       mobileLogo.className = 'hide';
       navMenu.className = 'navbar__menu';
       navMenuMobile.className = 'hide';
@@ -46,8 +46,8 @@
       mobileSearch.className = 'hide';
     },
     unmatch: function () {
-      siteLogo.className = 'navbar__logo--wrapper';
-      tabletLogo.className = 'hide';
+      siteLogo.className = 'hide';
+      tabletLogo.className = '';
       mobileLogo.className = 'hide';
       navMenu.className = 'navbar__menu';
       navMenuMobile.className = 'hide';
