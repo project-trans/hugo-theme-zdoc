@@ -125,7 +125,7 @@
     var navCollapseBtn = document.getElementById('navCollapseBtn');
     navCollapseBtn ? navCollapseBtn.addEventListener('click', function(e) {
       var navCollapse = document.querySelector('.navbar__collapse');
-      
+
       if (navCollapse) {
         var dataOpen = navCollapse.getAttribute('data-open');
 
@@ -163,7 +163,7 @@
 
 
     // ============================ tab ============================
-    document.querySelectorAll('.tab') ? 
+    document.querySelectorAll('.tab') ?
     document.querySelectorAll('.tab').forEach(function(elem, idx) {
       var containerId = elem.getAttribute('id');
       var containerElem = elem;
@@ -192,7 +192,7 @@
 
 
     // ========================== codetab ==========================
-    document.querySelectorAll('.codetab') ? 
+    document.querySelectorAll('.codetab') ?
     document.querySelectorAll('.codetab').forEach(function(elem, idx) {
       var containerId = elem.getAttribute('id');
       var containerElem = elem;
@@ -219,7 +219,7 @@
     }) : null;
     // =============================================================
 
-    
+
     // ======================= toggle theme =======================
     {{ $enableDarkMode := ($.Param "enableDarkMode") }}
     var enableDarkMode = JSON.parse({{ $enableDarkMode | jsonify }});
@@ -231,10 +231,10 @@
       root.className = 'theme__light';
       localStorage.setItem('theme', 'light');
     }
-    
+
     if (toggleToDarkBtn) {
       toggleToDarkBtn.onclick = function (e) {
-        root.className = 'theme__dark';
+        root.className = 'theme__dark dark';
         localStorage.setItem('theme', 'dark');
         toggleToLightBtn.className = 'navbar__icons--icon';
         toggleToDarkBtn.className = 'hide';
@@ -253,10 +253,10 @@
     // =================== section menu collapse ==================
     document.querySelectorAll('.menu__list').forEach(function(elem) {
       if (elem.classList.contains('active')) {
-        elem.style.maxHeight = elem.scrollHeight + "px"; 
+        elem.style.maxHeight = elem.scrollHeight + "px";
       }
     });
-    
+
     document.querySelectorAll('.menu__title--collapse').forEach(function(elem) {
       elem.addEventListener('click', function (e) {
         var content = this.nextElementSibling;
@@ -275,7 +275,7 @@
           content.style.maxHeight = null;
           content.classList.remove('active');
           menuTitleIcon.classList.add('right');
-          
+
           if (languagedir === 'rtl') {
             menuTitleIcon.classList.remove('downrtl');
           } else {
@@ -285,7 +285,7 @@
           content.style.maxHeight = content.scrollHeight + "px";
           content.classList.add('active');
           menuTitleIcon.classList.remove('right');
-          
+
           if (languagedir === 'rtl') {
             menuTitleIcon.classList.add('downrtl');
           } else {
@@ -324,7 +324,7 @@
         drawer.style.left = '-100%';
       }
 
-      
+
       setTimeout(function () {
         if (languagedir === 'rtl') {
           modal.style.right = '-100%';
@@ -390,7 +390,7 @@
     window.onscroll = function () {
       var st = window.pageYOffset || document.documentElement.scrollTop;
       if (st > lastScrollTop) { // scroll down
-        singleContentsElem ? 
+        singleContentsElem ?
         singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
           if (document.documentElement.scrollTop >= elem.offsetTop) {
             if (tableOfContentsElem) {
@@ -398,14 +398,14 @@
               tocElem.querySelectorAll('a').forEach(function (elem) {
                 elem.classList.remove('active');
               });
-              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]') ?
               tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
             }
           }
         }) : null;
         setNavbarBG(st);
       } else { // scroll up
-        singleContentsElem ? 
+        singleContentsElem ?
         singleContentsElem.querySelectorAll(tocLevels.toString()).forEach(function(elem) {
           if (document.documentElement.scrollTop >= elem.offsetTop) {
             if (tableOfContentsElem) {
@@ -413,7 +413,7 @@
               tocElem.querySelectorAll('a').forEach(function (elem) {
                 elem.classList.remove('active');
               });
-              tocElem.querySelector('a[href="#' + id + '"]') ? 
+              tocElem.querySelector('a[href="#' + id + '"]') ?
               tocElem.querySelector('a[href="#' + id + '"]').classList.add('active') : null;
             }
           }
@@ -439,7 +439,7 @@
       mobileSearchClassElem.style.display = 'none';
     }
 
-    mobileSearchBtnElem ? 
+    mobileSearchBtnElem ?
     mobileSearchBtnElem.addEventListener('click', function () {
       if (mobileSearchContainer) {
         mobileSearchContainer.style.display = 'block';
@@ -454,7 +454,7 @@
       }
     }) : null;
 
-    mobileSearchCloseBtnElem ? 
+    mobileSearchCloseBtnElem ?
     mobileSearchCloseBtnElem.addEventListener('click', function() {
       if (mobileSearchContainer) {
         mobileSearchContainer.style.display = 'none';
@@ -463,7 +463,7 @@
       if (mobileSearchInputElem) {
         mobileSearchInputElem.value = '';
       }
-      
+
       if (mobileSearchResultsElem) {
         while (mobileSearchResultsElem.firstChild) {
           mobileSearchResultsElem.removeChild(mobileSearchResultsElem.firstChild);
@@ -475,13 +475,13 @@
       }
     }) : null;
 
-    mobileSearchInputElem ? 
+    mobileSearchInputElem ?
     mobileSearchInputElem.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         if (mobileSearchContainer) {
           mobileSearchContainer.style.display = 'none';
         }
-        
+
         if (mobileSearchInputElem) {
           mobileSearchInputElem.value = '';
         }
@@ -504,9 +504,9 @@
     var rootEleme = document.getElementById('root');
     var selectThemeElem = document.querySelectorAll('.select-theme');
     var selectThemeItemElem = document.querySelectorAll('.select-theme__item');
-    
+
     if (localTheme) {
-      selectThemeItemElem ? 
+      selectThemeItemElem ?
       selectThemeItemElem.forEach(function (elem) {
         if (elem.text.trim() === localTheme) {
           elem.classList.add('is-active');
@@ -516,14 +516,14 @@
       }) : null;
     }
 
-    selectThemeItemElem ? 
+    selectThemeItemElem ?
     selectThemeItemElem.forEach(function (v, i) {
       v.addEventListener('click', function (e) {
         var selectedThemeVariant = e.target.text.trim();
         localStorage.setItem('theme', selectedThemeVariant);
 
         rootEleme.removeAttribute('class');
-        rootEleme.classList.add(`theme__${selectedThemeVariant}`);
+        rootEleme.classList.add(`theme__${selectedThemeVariant} ${selectedThemeVariant}`);
         selectThemeElem.forEach(function(rootElem) {
           rootElem.querySelectorAll('a').forEach(function (elem) {
             if (elem.classList) {
@@ -568,7 +568,7 @@
     var searchResults = null;
     var searchMenu = null;
     var searchText = null;
-    
+
     {{ $enableSearchHighlight := ($.Param "enableSearchHighlight") }}
     var enableSearchHighlight = JSON.parse({{ $enableSearchHighlight | jsonify }});
     {{ $enableSearch := ($.Param "enableSearch") }}
@@ -601,11 +601,11 @@
         xhr.send();
       })();
     }
-    
+
     function makeLi(ulElem, obj) {
       var li = document.createElement('li');
       li.className = 'search-result__item';
-      
+
       var a = document.createElement('a');
       a.innerHTML = obj.title;
       a.setAttribute('class', 'search-result__item--title');
@@ -618,7 +618,7 @@
       } else if (obj.content) {
         descDiv.innerHTML = obj.content.substring(0, 80);
       }
-      
+
       li.appendChild(a);
       li.appendChild(descDiv);
       ulElem.appendChild(li);
@@ -642,7 +642,7 @@
             a.setAttribute('class', 'search-result__item--title');
             a.setAttribute('href', obj.item.uri);
           }
-          
+
           if ('description' === obj.matches[i].key) {
             descDiv = document.createElement('div');
             descDiv.setAttribute('class', 'search-result__item--desc');
@@ -680,7 +680,7 @@
       searchResults = document.getElementById('search-results');
       searchMenu = document.getElementById('search-menu');
       searchResults.setAttribute('class', 'dd is-active');
-      
+
       var ul = document.createElement('ul');
       ul.setAttribute('class', 'dd-content search-content');
 
@@ -720,7 +720,7 @@
           searchMenu.lastChild
         );
       }
-      
+
       searchMenu.appendChild(ul);
     }
 
@@ -745,7 +745,7 @@
           var titleDiv = document.createElement('div');
           titleDiv.innerHTML = result.item.title;
           titleDiv.setAttribute('class', 'search-result__item--title');
-          
+
           if (result.matches && result.matches.length) {
             for (var i = 0; i < result.matches.length; i++) {
               if ('title' === result.matches[i].key) {
@@ -774,7 +774,7 @@
                 }
               }
             }
-            
+
             li.appendChild(titleDiv);
             if (descDiv) {
               li.appendChild(descDiv);
@@ -819,7 +819,7 @@
       while (wrap.firstChild) {
         wrap.removeChild(wrap.firstChild)
       }
-      searchResults.appendChild(content);      
+      searchResults.appendChild(content);
     }
 
     function renderSearchHighlightResultsMobile(searchText, results) {
@@ -841,7 +841,7 @@
           var titleDiv = document.createElement('div');
           titleDiv.innerHTML = result.item.title;
           titleDiv.setAttribute('class', 'mobile-search__item--title');
-          
+
           if (result.matches && result.matches.length) {
             for (var i = 0; i < result.matches.length; i++) {
               if ('title' === result.matches[i].key) {
@@ -870,7 +870,7 @@
                 }
               }
             }
-            
+
             li.appendChild(titleDiv);
             if (descDiv) {
               li.appendChild(descDiv);
@@ -901,7 +901,7 @@
         if (region[0] === region[1]) {
           return null;
         }
-        
+
         content += '' +
           text.substring(nextUnhighlightedRegionStartingIndex, region[0]) +
           '<span class="search__highlight">' +
@@ -920,7 +920,7 @@
     var searchMobile = document.getElementById('search-mobile');
     var searchResultsContainer = document.getElementById('search-results');
 
-    searchElem ? 
+    searchElem ?
     searchElem.addEventListener('input', function(e) {
       if (!e.target.value | window.innerWidth < 770) {
         searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
@@ -944,7 +944,7 @@
       }) : null;
     }) : null;
 
-    searchElem ? 
+    searchElem ?
     searchElem.addEventListener('blur', function() {
       if (window.innerWidth < 770) {
         return null;
@@ -952,7 +952,7 @@
       searchResultsContainer ? searchResultsContainer.setAttribute('class', 'dd') : null;
     }) : null;
 
-    searchElem ? 
+    searchElem ?
     searchElem.addEventListener('click', function(e) {
       if (window.innerWidth < 770) {
         return null;
@@ -985,14 +985,14 @@
     var items = null;
     var searchContainerMaxHeight = 350;
 
-    searchElem ? 
+    searchElem ?
     searchElem.addEventListener('keydown', function(e) {
       if (window.innerWidth < 770) {
         return null;
       }
 
       var items = document.querySelectorAll('#search-menu .dd-item');
-      
+
       if (e.key === 'ArrowDown') {
         if (activeIndex === null) {
           activeIndex = 0;
@@ -1018,7 +1018,7 @@
           activeIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
         }
         items[activeIndex].classList.add('is-active');
-        
+
         let overflowedPixel = items[activeIndex].offsetTop + items[activeIndex].clientHeight - searchContainerMaxHeight;
         if (overflowedPixel < 0) {
           document.querySelector(".search-content").scrollTop -= items[activeIndex].getBoundingClientRect().height;
@@ -1038,7 +1038,7 @@
       }
     }) : null;
 
-    searchMobile ? 
+    searchMobile ?
     searchMobile.addEventListener('input', function(e) {
       if (!e.target.value) {
         let wrap = document.getElementById('search-mobile-results');
@@ -1050,7 +1050,7 @@
 
       searchText = e.target.value;
       var results = fuse.search(e.target.value);
-      
+
       if (enableSearchHighlight) {
         renderSearchHighlightResultsMobile(searchText, results);
       } else {

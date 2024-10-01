@@ -1,0 +1,9 @@
+<div class="single__contents">
+  <h3 id="suggestion-box">意见反馈</h3>
+  <suggestion-box
+    target-url="https://rle.wiki/api/v1/suggestion"
+  ></suggestion-box>
+  {{- with resources.Get "js/sbox.ts" | js.Build (dict "targetPath" "bl") }}
+  <script async defer type="text/javascript" src="{{ .Permalink }}"></script>
+  {{- end }}
+</div>

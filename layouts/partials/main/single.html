@@ -20,6 +20,7 @@
       {{ partial "main/sections/list-main.html" . }}
       {{ partial "main/component/pagination-single.html" . }}
       {{ partial "comments/comments.html" . }}
+      {{ partial "comments/suggestion-box.html" . }}
     </article>
 
     <section id="list-side" class="{{ if $wideViewAsDefault }}hide{{ else }}r{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">

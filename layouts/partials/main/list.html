@@ -14,6 +14,7 @@
         {{ partial "main/sections/list-section.html" (dict "section_to_display" .section_to_display) }}
       {{ end }}
       {{ partial "main/component/pagination-single.html" .context }}
+      {{ partial "comments/suggestion-box.html" . }}
     </article>
 
     <section id="list-side" class="{{ if $wideViewAsDefault }}hide{{ else }}r{{ end }}" data-dir="{{ $.context.Param "languagedir" | default "ltr" }}">
@@ -72,7 +73,7 @@
         listMain.className = 'm';
         listSide.className = 'r';
       }
-      
+
       switchElem.className = 'switch';
     },
   }).register("screen and (max-width:600px)", {
