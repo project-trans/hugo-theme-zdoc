@@ -21,13 +21,13 @@
 
         if (localTheme) {
             if (themeOptions && themeOptions.length > 0) {
-                themeOptions.includes(localTheme) ? 
-                rootElem.className = `theme__${localTheme}` :
-                rootElem.className = `theme__${themeOptions[0]}`;
+                themeOptions.includes(localTheme) ?
+                rootElem.className = `theme__${localTheme} ${localTheme}` :
+                rootElem.className = `theme__${themeOptions[0]} ${themeOptions[0]}`;
             }
         }
     </script>
-    
+
     <div id="container">
         {{ partial "drawer/drawer.html" . }}
         {{ partial "navbar/navbar.html" . }}
