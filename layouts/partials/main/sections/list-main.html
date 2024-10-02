@@ -9,18 +9,18 @@
   {{ end }}
 
   <article class="single__contents" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
-    {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
+    {{/*  {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
       {{ $delta := sub now.Unix .Lastmod.Unix }}
       {{ $days := div $delta 86400 }}
       {{ if gt $days 30 }}
         {{ $lastModified := .Lastmod.Format "2006-01-02T15:04:05Z0700" }}
         <p class="timeliness tips" data-modified="{{ $lastModified }}">{{ printf (i18n "timeliness-text") $days | safeHTML }}</p>
       {{ end }}
-    {{ end }}
+    {{ end }}  */}}
     {{ .Content }}
-    {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
+    {{/*  {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
       <p class="last-modified">{{ i18n "last-modified" }}{{ .Lastmod | time.Format (i18n "summary-dateformat") }}</p>
-    {{ end }}
+    {{ end }}  */}}
   </article>
 </div>
 <script>
