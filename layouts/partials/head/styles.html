@@ -7,7 +7,7 @@
 {{ range .Site.Params.custom_css }}
   {{ $custom_template := resources.Get . }}
   {{ if $custom_template }}
-    {{ $custom_style := $custom_template | resources.ToCSS | resources.Minify }}
+    {{ $custom_style := $custom_template | css.Sass | resources.Minify }}
     <link rel="stylesheet" href="{{ $custom_style.RelPermalink }}">
   {{ end }}
 {{ end }}

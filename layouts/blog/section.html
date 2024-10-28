@@ -17,9 +17,12 @@
   <main class="main blog__bg">
     <div class="sv">
       <div class="blog-post">
-        {{ $paginator := .Paginate (where .RegularPages "Type" .Type) }}
+        {{ $pages := where .RegularPages "Type" .Type }}
+        {{ $paginator := .Paginator }}
         {{ range $paginator.Pages }}
+        {{ if in $pages . }}
           {{ .Render "summary" }}
+          {{ end }}
         {{ end }}
         {{ partial "main/component/pagination.html" . }}
       </div>

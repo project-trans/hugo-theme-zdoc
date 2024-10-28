@@ -9,7 +9,10 @@ hasCJKLanguage = false
 copyright = "&copy;{year}, All Rights Reserved"
 timeout = 10000
 enableEmoji = true
-paginate = 13
+
+[pagination]
+pagerSize = 10
+
 rssLimit = 100
 
 googleAnalytics = ""
