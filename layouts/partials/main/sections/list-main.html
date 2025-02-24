@@ -9,27 +9,9 @@
   {{ end }}
 
   <article class="single__contents" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
-    {{/*  {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
-      {{ $delta := sub now.Unix .Lastmod.Unix }}
-      {{ $days := div $delta 86400 }}
-      {{ if gt $days 30 }}
-        {{ $lastModified := .Lastmod.Format "2006-01-02T15:04:05Z0700" }}
-        <p class="timeliness tips" data-modified="{{ $lastModified }}">{{ printf (i18n "timeliness-text") $days | safeHTML }}</p>
-      {{ end }}
-    {{ end }}  */}}
     {{ .Content }}
-    {{/*  {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
-      <p class="last-modified">{{ i18n "last-modified" }}{{ .Lastmod | time.Format (i18n "summary-dateformat") }}</p>
-    {{ end }}  */}}
+    {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
+      <p class="last-modified">{{ i18n "last-modified" }}<time datetime="{{ .Lastmod | time.Format "2006-01-02T15:04:05Z0700" }}">{{ .Lastmod | time.Format (i18n "summary-dateformat") }}</time></p>
+    {{ end }}
   </article>
 </div>
-<script>
-  (function() {
-    const element = document.querySelector(".timeliness.tips")
-    if (!element) return
-    const delta = Date.now() - new Date(element.dataset.modified).getTime()
-    const deltaDays = (delta / 1000 / 86400) | 0
-    const deltaElement = element.querySelector("span")
-    deltaElement.textContent = Math.max(+deltaElement.textContent, deltaDays)
-  }())
-</script>

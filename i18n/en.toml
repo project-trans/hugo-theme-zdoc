@@ -25,5 +25,3 @@ other = "EDIT THIS PAGE"
 [last-modified]
 other = "Last Modified: "
 
-[timeliness-text]
-other = "This is an article created <span>%d</span> days ago and the information in it may have evolved or changed."
