@@ -10,7 +10,7 @@
 
   <article class="single__contents" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
     {{ .Content }}
-    {{ if and .Lastmod (not ($.Param "hidden-timeliness")) }}
+    {{ if and .Lastmod (not ($.Param "hidden-timeliness")) (gt (len .Content) (.Site.Params.minTimelinessContentLength | default 0)) }}
       <p class="last-modified">{{ i18n "last-modified" }}<time datetime="{{ .Lastmod | time.Format "2006-01-02T15:04:05Z0700" }}">{{ .Lastmod | time.Format (i18n "summary-dateformat") }}</time></p>
     {{ end }}
   </article>
