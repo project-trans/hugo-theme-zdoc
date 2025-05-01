@@ -3,6 +3,17 @@
 {{ $main_style := $main_template | resources.ExecuteAsTemplate "main_parsed.scss" . | toCSS $main_options | resources.Minify }}
 <link rel="stylesheet" href="{{ $main_style.RelPermalink }}">
 
+<!-- 打印样式 -->
+{{ if .Site.Params.print_css }}
+{{ range .Site.Params.print_css }}
+  {{ $print_template := resources.Get . }}
+  {{ if $print_template }}
+    {{ $print_style := $print_template | css.Sass | resources.Minify }}
+    <link rel="stylesheet" href="{{ $print_style.RelPermalink }}" media="print">
+  {{ end }}
+{{ end }}
+{{ end }}
+
 {{ if .Site.Params.custom_css }}
 {{ range .Site.Params.custom_css }}
   {{ $custom_template := resources.Get . }}
